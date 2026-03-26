@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fredoka:wght@300..700&family=Patrick+Hand&display=swap');
+
+:root {
+  --color-bg-pink: #fc5c9c;
+  --color-inner-cream: #fbf0e8;
+  --color-text-dark: #3a3a3a;
+  
+  --color-tab-pink: #ffc9cd;
+  --color-tab-purple: #c6a2f8;
+  --color-tab-cyan: #6cdbd8;
+  --color-tab-green: #dcf5a6;
+  
+  --color-pill-pink: #ff9bb6;
+  --color-pill-red: #d12e58;
+  
+  --color-skill-pink: #fa6aab;
+  --color-skill-teal: #78cedc;
+  --color-skill-yellow: #fded71;
+  --color-skill-lightgreen: #e2f9aa;
+  --color-skill-purple: #c38ef0;
+  --color-skill-darkred: #be2e4e;
+
+  --font-handwriting: 'Patrick Hand', cursive;
+  --font-caveat: 'Caveat', cursive;
+  --font-rounded: 'Fredoka', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--color-bg-pink);
+  font-family: var(--font-rounded);
+  color: var(--color-text-dark);
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}

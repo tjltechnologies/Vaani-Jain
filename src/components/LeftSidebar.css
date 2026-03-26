@@ -1,0 +1,159 @@
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  align-items: center;
+  gap: 40px;
+}
+
+.polaroid-container {
+  background: white;
+  padding: 15px 15px 30px 15px;
+  box-shadow: 2px 5px 15px rgba(0,0,0,0.1);
+  transform: rotate(-3deg);
+  border: 1px solid #f0f0f0;
+  position: relative;
+  width: 100%;
+}
+
+.photo-wrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-text {
+  text-align: center;
+  font-family: var(--font-handwriting);
+  color: var(--color-pill-pink);
+  font-size: 1.4rem;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.star-icon {
+  color: var(--color-skill-yellow);
+  font-size: 1.2rem;
+}
+
+.purple-swirl {
+  position: absolute;
+  left: -25px;
+  bottom: -15px;
+  font-size: 2rem;
+  transform: rotate(-20deg);
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: white;
+  padding: 0px 20px 20px 20px;
+  border-radius: 20px;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.05);
+}
+
+.pill-title {
+  background-color: var(--color-pill-pink);
+  color: white;
+  padding: 8px 30px;
+  border-radius: 20px;
+  font-family: var(--font-rounded);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 5px;
+  position: relative;
+  top: -20px; 
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.4rem;
+  color: var(--color-pill-red);
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  color: var(--color-tab-cyan);
+}
+
+/* Laptop */
+.laptop-graphic {
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(2deg);
+}
+
+.laptop-screen {
+  width: 150px;
+  height: 100px;
+  background-color: var(--color-pill-pink);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #ffc2d1;
+}
+
+.laptop-heart {
+  font-size: 3rem;
+}
+
+.laptop-base {
+  width: 170px;
+  height: 15px;
+  background-color: var(--color-pill-pink);
+  border-radius: 0 0 10px 10px;
+  border-bottom: 4px solid #ffc2d1;
+}
+
+.floating-star {
+  position: absolute;
+}
+
+.floating-star.left {
+  left: -20px;
+  bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.floating-star.right {
+  right: -20px;
+  top: -10px;
+  font-size: 1.2rem;
+  color: var(--color-tab-purple);
+}

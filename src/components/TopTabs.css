@@ -1,0 +1,57 @@
+.top-tabs-container {
+  display: flex;
+  position: absolute;
+  top: -45px;
+  left: 30px;
+  right: 60px; /* leave space for heart */
+  gap: 2px;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .top-tabs-container {
+    top: -85px;
+    flex-wrap: wrap;
+    left: 10px;
+    right: 10px;
+    justify-content: center;
+  }
+}
+
+.tab-btn {
+  border: none;
+  font-family: var(--font-handwriting);
+  font-size: 1.1rem;
+  padding: 10px 15px 20px 15px;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  transform: translateY(10px);
+  transition: transform 0.2s;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .tab-btn {
+    font-size: 1.2rem;
+    padding: 12px 20px 20px 20px;
+    border-radius: 15px 15px 0 0;
+    gap: 5px;
+  }
+}
+
+.tab-btn:hover {
+  transform: translateY(5px);
+}
+
+.tab-btn.active {
+  transform: translateY(0);
+  background-color: var(--color-inner-cream) !important;
+  color: var(--color-pill-red);
+  font-weight: bold;
+  z-index: 5;
+  padding-bottom: 25px; /* overlap main container border */
+  border-bottom: 2px solid var(--color-inner-cream);
+}

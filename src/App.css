@@ -1,0 +1,47 @@
+.app-wrapper {
+  background-color: var(--color-bg-pink);
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main-container {
+  background-color: var(--color-inner-cream);
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 40px;
+  margin-top: 40px; /* space for tabs sticking out */
+}
+
+.content-container {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    flex-direction: row;
+  }
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.heart-icon-top-right {
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  font-size: 50px;
+  color: white;
+  z-index: 10;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
