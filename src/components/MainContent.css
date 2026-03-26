@@ -58,6 +58,7 @@
   align-items: center;
   min-height: 300px;
   position: relative;
+  padding: 30px 10px;
 }
 
 /* Shapes */
@@ -66,9 +67,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   text-align: center;
   padding: 15px;
+  margin: 5px;
+  flex-shrink: 0;
   box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
@@ -127,8 +130,6 @@
   clip-path: polygon(10% 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%);
   width: 200px;
   height: 80px;
-  top: 10px;
-  right: 10px;
   transform: rotate(-5deg);
   box-shadow: none; 
   filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
@@ -139,8 +140,6 @@
   clip-path: polygon(49% 0, 61% 10%, 75% 5%, 83% 18%, 97% 20%, 94% 35%, 100% 49%, 91% 61%, 95% 75%, 82% 82%, 80% 97%, 65% 92%, 50% 100%, 36% 91%, 21% 96%, 17% 81%, 3% 78%, 7% 62%, 0 50%, 8% 36%, 2% 21%, 17% 17%, 21% 3%, 35% 8%);
   width: 140px;
   height: 140px;
-  top: 40px;
-  left: 20px;
   box-shadow: none;
   filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
 }
@@ -151,8 +150,6 @@
   width: 180px;
   height: 150px;
   padding-top: 30px;
-  bottom: 20px;
-  right: 20px;
 }
 
 .starburst.yellow {
@@ -160,8 +157,6 @@
   clip-path: polygon(50% 0%, 61% 25%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 25%);
   width: 150px;
   height: 150px;
-  bottom: 50px;
-  left: 50px;
   transform: rotate(10deg);
   box-shadow: none;
   filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
@@ -171,8 +166,6 @@
   background-color: var(--color-skill-purple);
   border-radius: 40px;
   padding: 10px 40px;
-  bottom: 80px;
-  right: 160px;
   transform: rotate(-3deg);
 }
 
@@ -180,8 +173,6 @@
   background-color: var(--color-skill-darkred);
   border-radius: 8px;
   padding: 10px 25px;
-  bottom: 20px;
-  right: 180px;
   transform: rotate(4deg);
 }
 .rectangle.red span {
@@ -245,15 +236,10 @@
     min-height: auto;
   }
   .skill-shape {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
     width: 100% !important;
     max-width: 280px;
     margin: 0 auto;
+    transform: none !important;
   }
   .decor-star {
     display: none;
