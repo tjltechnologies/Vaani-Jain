@@ -2,9 +2,8 @@ import './MainContent.css'
 
 export default function MainContent({ profile, skills }) {
   
-  const nameParts = profile?.name ? profile.name.split('❤') : ['VA', 'NI JAIN'];
-  const firstPart = nameParts[0] || 'VA';
-  const secondPart = nameParts[1] || 'NI JAIN';
+  const name = profile?.name || 'VA❤NI JAIN';
+  const nameParts = name.split('❤');
   
   const aboutText = profile?.about_text || 'Hi! I am testing my portfolio.';
 
@@ -13,7 +12,12 @@ export default function MainContent({ profile, skills }) {
       
       <div className="header-section">
         <h1 className="name-title">
-          {firstPart}<span className="heart-letter">❤</span>{secondPart}
+          {nameParts.map((part, index) => (
+            <span key={index}>
+              {part}
+              {index < nameParts.length - 1 && <span className="heart-letter">❤</span>}
+            </span>
+          ))}
         </h1>
         <p className="about-text">
           {aboutText}

@@ -36,6 +36,16 @@
   flex-direction: column;
 }
 
+@media (max-width: 768px) {
+  .hide-on-mobile-gallery {
+    display: none !important;
+  }
+  .main-container {
+    margin-top: 15vw; /* give wrap space for tabs */
+    padding: 20px;
+  }
+}
+
 .heart-icon-top-right {
   position: absolute;
   top: -30px;

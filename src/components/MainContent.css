@@ -235,3 +235,42 @@
 .icon-box.green { background-color: #c9ebd8; }
 .icon-box.purple2 { background-color: #ccb9fa; }
 .icon-box.pink { background-color: #fcccf1; }
+
+@media (max-width: 768px) {
+  .skills-cloud {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    min-height: auto;
+  }
+  .skill-shape {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .decor-star {
+    display: none;
+  }
+  .header-section {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .name-title {
+    font-size: 2.5rem;
+  }
+  .heart-letter {
+    font-size: 2rem;
+  }
+  .about-text {
+    text-align: center;
+    margin: 10px auto;
+  }
+}
+

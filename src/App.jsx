@@ -76,7 +76,9 @@ function App() {
         <TopTabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
         
         <div className="content-container">
-          <LeftSidebar profile={profile} />
+          <div className={`sidebar-wrapper ${activeTab !== 'ABOUT ME' ? 'hide-on-mobile-gallery' : ''}`}>
+            <LeftSidebar profile={profile} />
+          </div>
           
           <div className="right-panel">
             {activeTab === 'ABOUT ME' ? (

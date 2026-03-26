@@ -1,20 +1,26 @@
 .top-tabs-container {
   display: flex;
   position: absolute;
-  top: -45px;
-  left: 30px;
-  right: 60px; /* leave space for heart */
+  bottom: 100%;
+  left: 10px;
+  right: 40px; /* leave space for heart */
   gap: 2px;
   z-index: 1;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
   .top-tabs-container {
-    top: -85px;
-    flex-wrap: wrap;
-    left: 10px;
     right: 10px;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .top-tabs-container::-webkit-scrollbar {
+    display: none;
   }
 }
 
