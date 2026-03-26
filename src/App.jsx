@@ -13,6 +13,8 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!supabase) return;
+
     async function loadData() {
       try {
         const { data: profileData, error: profileError } = await supabase
@@ -36,8 +38,26 @@ function App() {
         setLoading(false)
       }
     }
-    loadData()
+    if (supabase) {
+      loadData()
+    } else {
+      setLoading(false)
+    }
   }, [])
+
+  if (!supabase) {
+    return (
+      <div className="app-wrapper" style={{alignItems: 'center', margin: 'auto'}}>
+        <div style={{background: 'white', padding: '40px', borderRadius: '20px', maxWidth: '600px', textAlign: 'center'}}>
+          <h1 style={{color: 'var(--color-pill-red)'}}>Setup Required 🛠️</h1>
+          <p style={{fontSize: '1.2rem'}}>It looks like the Supabase environment variables are missing in your deployment.</p>
+          <p>Go to your Vercel Project Settings &gt; Environment Variables, and add:<br/>
+          <b>VITE_SUPABASE_URL</b> and <b>VITE_SUPABASE_ANON_KEY</b></p>
+          <p>Then redeploy your project!</p>
+        </div>
+      </div>
+    )
+  }
 
   if (loading) {
     return (
