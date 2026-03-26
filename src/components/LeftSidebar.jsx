@@ -1,20 +1,25 @@
 import './LeftSidebar.css'
 
-// Placeholder image for Vaani
 const PLACEHOLDER_IMG = 'https://picsum.photos/seed/vaani/400/400'
 
-export default function LeftSidebar() {
+export default function LeftSidebar({ profile }) {
+  const avatar = profile?.avatar_url || PLACEHOLDER_IMG;
+  const subtitle = profile?.subtitle || "ARTIST & CODER";
+  const location = profile?.location || "Earth";
+  const age = profile?.age || "8";
+  const hobbies = profile?.hobbies_text || "Lots of Hobbies!";
+
   return (
     <div className="left-sidebar">
       
       {/* Polaroid Box */}
       <div className="polaroid-container">
         <div className="photo-wrapper">
-          <img src={PLACEHOLDER_IMG} alt="Vaani" className="profile-photo"/>
+          <img src={avatar} alt="Vaani" className="profile-photo"/>
         </div>
         <div className="polaroid-text">
           <span className="star-icon">⭐</span>
-          <span className="subtitle">ARTIST & CODER</span>
+          <span className="subtitle">{subtitle}</span>
           <span className="star-icon">⭐</span>
           <div className="purple-swirl">🌀</div>
         </div>
@@ -25,13 +30,13 @@ export default function LeftSidebar() {
         <div className="pill-title pink">INFO</div>
         <ul className="info-list">
           <li>
-            <span className="info-icon">📍</span> Earth
+            <span className="info-icon">📍</span> {location}
           </li>
           <li>
-            <span className="info-icon">🎂</span> 8 Years Old
+            <span className="info-icon">🎂</span> {age} Years Old
           </li>
           <li>
-            <span className="info-icon" style={{color: 'purple'}}>🎨</span> Lots of Hobbies!
+            <span className="info-icon" style={{color: 'purple'}}>🎨</span> {hobbies}
           </li>
         </ul>
       </div>

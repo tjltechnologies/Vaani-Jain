@@ -1,13 +1,22 @@
 import './MainContent.css'
 
-export default function MainContent() {
+export default function MainContent({ profile, skills }) {
+  
+  const nameParts = profile?.name ? profile.name.split('❤') : ['VA', 'NI JAIN'];
+  const firstPart = nameParts[0] || 'VA';
+  const secondPart = nameParts[1] || 'NI JAIN';
+  
+  const aboutText = profile?.about_text || 'Hi! I am testing my portfolio.';
+
   return (
     <div className="main-content">
       
       <div className="header-section">
-        <h1 className="name-title">VA<span className="heart-letter">❤</span>NI JAIN</h1>
+        <h1 className="name-title">
+          {firstPart}<span className="heart-letter">❤</span>{secondPart}
+        </h1>
         <p className="about-text">
-          Hi! I am 8 years old and I love learning new things. I specialize in trying my best at all my hobbies! Welcome to my portfolio where I share my skills and fun projects.
+          {aboutText}
         </p>
       </div>
 
@@ -15,33 +24,35 @@ export default function MainContent() {
         <div className="pill-title pink skills-pill">SKILLS</div>
         
         <div className="skills-cloud">
-          
-          <div className="skill-shape ribbon teal">
-            <span className="skill-text-large">Bharatnatyam</span>
-            <span className="skill-text-small">(lvl 3)</span>
-          </div>
-          
-          <div className="skill-shape badge pink">
-            <span className="skill-text-script">Artist</span>
-          </div>
+          {skills && skills.map((skill) => {
+            // "type" stores the css class names (e.g. "ribbon teal")
+            // We use the shape to determine which typography classes to apply
+            let textClass1 = "skill-text-serif";
+            let textClass2 = "skill-text-small";
 
-          <div className="skill-shape arch green">
-            <span className="skill-text-cursive">Programming</span>
-            <span className="skill-text-caps">SCRATCH</span>
-          </div>
+            if (skill.type.includes('ribbon')) {
+              textClass1 = "skill-text-large";
+              textClass2 = "skill-text-small";
+            } else if (skill.type.includes('badge') || skill.type.includes('pill')) {
+              textClass1 = "skill-text-script";
+              textClass2 = ""; 
+            } else if (skill.type.includes('arch')) {
+              textClass1 = "skill-text-cursive";
+              textClass2 = "skill-text-caps";
+            } else if (skill.type.includes('starburst')) {
+              textClass1 = "skill-text-serif";
+              textClass2 = "skill-text-tiny";
+            }
 
-          <div className="skill-shape starburst yellow">
-            <span className="skill-text-serif">Karate</span>
-            <span className="skill-text-tiny">sky blue belt</span>
-          </div>
-
-          <div className="skill-shape pill purple">
-            <span className="skill-text-script">Crafts & Arts</span>
-          </div>
-
-          <div className="skill-shape rectangle red">
-            <span className="skill-text-serif">Reading Books</span>
-          </div>
+            return (
+              <div key={skill.id} className={`skill-shape ${skill.type}`}>
+                <span className={textClass1}>{skill.name}</span>
+                {skill.subtitle && (
+                  <span className={textClass2}>{skill.subtitle}</span>
+                )}
+              </div>
+            )
+          })}
 
           {/* Decorative stars */}
           <span className="decor-star s1">⭐</span>
@@ -54,12 +65,12 @@ export default function MainContent() {
       <div className="favorites-section">
         <div className="pill-title pink">FAVORITES</div>
         <div className="icons-row">
-          <div className="icon-box blue">🐱</div> {/* Scratch Cat */}
-          <div className="icon-box yellow">🥋</div> {/* Karate */}
-          <div className="icon-box purple">📚</div> {/* Books */}
-          <div className="icon-box green">✂️</div> {/* Crafts */}
-          <div className="icon-box purple2">🖌️</div> {/* Art */}
-          <div className="icon-box pink">💃</div> {/* Dance */}
+          <div className="icon-box blue">🐱</div>
+          <div className="icon-box yellow">🥋</div>
+          <div className="icon-box purple">📚</div>
+          <div className="icon-box green">✂️</div>
+          <div className="icon-box purple2">🖌️</div>
+          <div className="icon-box pink">💃</div>
         </div>
       </div>
 
